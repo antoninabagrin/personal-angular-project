@@ -1,0 +1,15 @@
+.clothes-card {
+  margin: 20px 10px;
+  max-width: 474px;
+}
+
+.hanset-portrait .clothes-card {
+  width: 100%;
+  margin: 0;
+  padding: 16px 0;
+}
+
+.hanset-portrait .clothes-thumbnail {
+  width: 100%;
+  margin: 0;
+}
