@@ -10,12 +10,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 import { HeaderComponent } from './header/header.component';
 import { WomanComponent } from './woman/woman.component';
 import { ManComponent } from './man/man.component';
 import { HomeComponent } from './home/home.component';
 import { ClothesListComponent } from './woman/clothes-list/clothes-list.component';
 import { KidsComponent } from './kids/kids.component';
+import { ClothesService } from './clothes.service';
+import { ListOfClothesComponent } from './list-of-clothes/list-of-clothes.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,7 @@ import { KidsComponent } from './kids/kids.component';
     HomeComponent,
     ClothesListComponent,
     KidsComponent,
+    ListOfClothesComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,8 +42,10 @@ import { KidsComponent } from './kids/kids.component';
     MatListModule,
     MatGridListModule,
     MatCardModule,
+    MatMenuModule,
+    MatButtonModule,
   ],
-  providers: [],
+  providers: [ClothesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

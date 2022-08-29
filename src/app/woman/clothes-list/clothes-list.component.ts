@@ -9,8 +9,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   styleUrls: ['./clothes-list.component.css'],
 })
 export class ClothesListComponent implements OnInit {
-  cols = 4;
-  rowHeight = '500px';
+  cols = 5;
+  rowHeight = '550px';
   handsetPortrait = false;
 
   clothesItem: ClothesItem[] = [
@@ -73,15 +73,15 @@ export class ClothesListComponent implements OnInit {
       .subscribe((result) => {
         const breakpoints = result.breakpoints;
 
-        this.cols = 4;
-        this.rowHeight = '500px';
+        this.cols = 5;
+        this.rowHeight = '450px';
         this.handsetPortrait = false;
 
         if (breakpoints[Breakpoints.TabletPortrait]) {
           this.cols = 1;
         } else if (breakpoints[Breakpoints.HandsetPortrait]) {
           this.cols = 1;
-          this.rowHeight = '430px';
+          this.rowHeight = '450px';
           this.handsetPortrait = true;
         } else if (breakpoints[Breakpoints.HandsetLandscape]) {
           this.cols = 1;

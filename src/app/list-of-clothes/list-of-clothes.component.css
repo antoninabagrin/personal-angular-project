@@ -29,6 +29,7 @@ p,
 }
 
 .icon-favorite {
+  cursor: pointer;
   margin-left: 25px;
 }
 
