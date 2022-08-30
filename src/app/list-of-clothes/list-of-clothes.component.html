@@ -23,10 +23,10 @@
 
         <button color="primary" mat-flat-button>Add to card</button>
         <mat-icon
+          (click)="getItem(item)"
           class="icon-favorite"
           color="warn"
           mat-icon-button
-          (click)="onSelectFavoriteItem()"
           >favorite
         </mat-icon>
       </mat-card-footer>

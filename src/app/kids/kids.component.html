@@ -1,5 +1,6 @@
 <p>kids works!</p>
 <p>Favorite items:</p>
-<div style="font-size: larger" *ngFor="let item of favoriteItem">
-  <p>{{item.price}</p>
+<div *ngFor="let item of favoriteItem">
+  <img [src]="item.imageUrl" alt="" />
+  <p>{{ item.price }}</p>
 </div>

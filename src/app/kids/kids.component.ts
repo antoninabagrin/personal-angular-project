@@ -8,24 +8,22 @@ import { ClothesItem } from '../model/clothesItem';
   styleUrls: ['./kids.component.css'],
 })
 export class KidsComponent implements OnInit {
-  favoriteItem: ClothesItem[] = [];
+  favoriteItem: ClothesItem[] = [
+    {
+      imageUrl:
+        'https://static.zara.net/photos///2022/I/0/1/p/4799/036/123/2/w/387/4799036123_2_1_1.jpg?ts=1655898815835',
+      price: 45.99,
+    },
+  ];
   constructor(private clothesService: ClothesService) {}
 
   ngOnInit() {
-    this.clothesService.favoriteItem.subscribe(
-      (favoriteItem: ClothesItem[]) => {
-        console.log('heyy from Kids Component');
-        console.log(favoriteItem);
-
-        this.favoriteItem = favoriteItem;
-      }
-    );
+    // this.clothesService.statusUpdated.subscribe(
+    //   (favoriteItem: ClothesItem[]) => {
+    //     console.log(favoriteItem, 'from kids');
+    //     this.favoriteItem = favoriteItem;
+    //   }
+    // );
+    this.favoriteItem = this.clothesService.getFavoriteItems();
   }
-
-  // addd(items: ClothesItem[]) {
-  //   this.clothesService.favoriteItem.subscribe(() => {
-  //     console.log('heyy from Kids Component');
-  //   });
-
-  // }
 }

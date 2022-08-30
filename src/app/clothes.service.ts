@@ -2,8 +2,6 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { ClothesItem } from 'src/app/model/clothesItem';
 
 export class ClothesService {
-  favoriteItem = new EventEmitter<ClothesItem[]>();
-  private favoritesItem: ClothesItem[] = [];
   private clothes: ClothesItem[] = [
     {
       imageUrl:
@@ -52,25 +50,19 @@ export class ClothesService {
     },
   ];
 
+  statusUpdated = new EventEmitter<ClothesItem[]>();
+  favoriteItem: ClothesItem[] = [];
   constructor() {}
 
   getClothes() {
     return this.clothes;
   }
 
-  add(item: ClothesItem) {
-    this.favoritesItem.push(item);
-    this.favoriteItem.emit(this.favoritesItem.slice());
+  addtoFavorite(item: ClothesItem) {
+    this.favoriteItem.push(...this.favoriteItem, item);
   }
 
-  addToFavorite(items: ClothesItem[]) {
-    console.log('heyy from Clothes Service');
-
-    // for (let itemClothes of items) {
-    //   this.add(itemClothes);
-    // }
-    this.favoritesItem.push(...this.favoritesItem);
-    this.favoriteItem.emit(this.favoritesItem.slice());
-    console.log(this.favoriteItem);
+  getFavoriteItems() {
+    return this.favoriteItem;
   }
 }

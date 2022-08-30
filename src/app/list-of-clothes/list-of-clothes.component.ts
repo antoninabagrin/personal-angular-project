@@ -9,9 +9,6 @@ import { ClothesItem } from '../model/clothesItem';
   styleUrls: ['./list-of-clothes.component.css'],
 })
 export class ListOfClothesComponent implements OnInit {
-  @Input() favoriteItem: ClothesItem[] = [];
-
-  // favoriteItem: ClothesItem=[]
   clothes: ClothesItem[] = [];
   cols = 5;
   rowHeight = '550px';
@@ -21,10 +18,9 @@ export class ListOfClothesComponent implements OnInit {
   ngOnInit(): void {
     this.clothes = this.clothesService.getClothes();
   }
+  getItem(data: any) {
+    console.log(data, 'datta from getItem');
 
-  onSelectFavoriteItem() {
-    console.log('heyy from List of Clothes');
-
-    this.clothesService.addToFavorite(this.favoriteItem);
+    this.clothesService.addtoFavorite(data);
   }
 }
