@@ -21,7 +21,9 @@
           </mat-menu>
         </mat-card-actions>
 
-        <button color="primary" mat-flat-button>Add to card</button>
+        <button color="primary" mat-flat-button (click)="addItemToCart()">
+          Add to card
+        </button>
         <mat-icon class="icon-favorite" color="warn" mat-icon-button
           >favorite
         </mat-icon>

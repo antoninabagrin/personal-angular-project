@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,10 +15,11 @@ import { HeaderComponent } from './header/header.component';
 import { WomanComponent } from './woman/woman.component';
 import { ManComponent } from './man/man.component';
 import { HomeComponent } from './home/home.component';
-import { ClothesListComponent } from './woman/clothes-list/clothes-list.component';
-import { KidsComponent } from './kids/kids.component';
+// import { ClothesListComponent } from './woman/clothes-list/clothes-list.component';
+// import { KidsComponent } from './kids/kids.component';
 import { ClothesService } from './clothes.service';
-import { ListOfClothesComponent } from './list-of-clothes/list-of-clothes.component';
+import { ListOfClothesComponent } from './man/list-of-clothes/list-of-clothes.component';
+import { ClothesItemDetailComponent } from './man/clothes-item-detail/clothes-item-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +28,15 @@ import { ListOfClothesComponent } from './list-of-clothes/list-of-clothes.compon
     WomanComponent,
     ManComponent,
     HomeComponent,
-    ClothesListComponent,
-    KidsComponent,
+    // ClothesListComponent,
+    // KidsComponent,
     ListOfClothesComponent,
+    ClothesItemDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     BrowserAnimationsModule,
     MatSidenavModule,
     MatToolbarModule,
