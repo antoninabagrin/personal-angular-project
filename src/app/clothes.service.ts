@@ -1,6 +1,8 @@
 import { Observable, Subject, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ClothesItem } from 'src/app/model/clothesItem';
+import { Produts } from './mock-products';
+import { Product } from './model/product';
 
 export class ClothesService {
   private clothes: ClothesItem[] = [
@@ -84,5 +86,18 @@ export class ClothesService {
 
   getFavoriteItems() {
     return this.favoriteItem;
+  }
+
+  getProducts(): Observable<Product[]> {
+    const products = of(Produts);
+    return products;
+  }
+
+  getProduct(id: number | string) {
+    return this.getProducts().pipe(
+      map(
+        (products: Product[]) => products.find((product) => product.id === +id)!
+      )
+    );
   }
 }

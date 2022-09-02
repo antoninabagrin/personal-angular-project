@@ -1,0 +1,22 @@
+<div id="container">
+  <mat-grid-list class="grid-layout">
+    <mat-card *ngFor="let product of products" class="product-card">
+      <img
+        mat-card-image
+        [src]="product.imageUrl"
+        alt="Photo of a product"
+        (click)="show()"
+        [routerLink]="['/product/', product.id]"
+      />
+      <mat-card-actions>
+        <button mat-mini-fab color="accent">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-card-actions>
+      <mat-card-content>
+        <mat-card-title>{{ product.title }}</mat-card-title>
+        <mat-card-subtitle>{{ product.price }} LEI</mat-card-subtitle>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-list>
+</div>

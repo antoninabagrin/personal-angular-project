@@ -16,10 +16,11 @@ import { WomanComponent } from './woman/woman.component';
 import { ManComponent } from './man/man.component';
 import { HomeComponent } from './home/home.component';
 // import { ClothesListComponent } from './woman/clothes-list/clothes-list.component';
-// import { KidsComponent } from './kids/kids.component';
+import { ProductsComponent } from './kids/products/products.component';
 import { ClothesService } from './clothes.service';
 import { ListOfClothesComponent } from './man/list-of-clothes/list-of-clothes.component';
 import { ClothesItemDetailComponent } from './man/clothes-item-detail/clothes-item-detail.component';
+import { KidsModule } from './kids/kids.module';
 
 @NgModule({
   declarations: [
@@ -29,14 +30,14 @@ import { ClothesItemDetailComponent } from './man/clothes-item-detail/clothes-it
     ManComponent,
     HomeComponent,
     // ClothesListComponent,
-    // KidsComponent,
+    ProductsComponent,
     ListOfClothesComponent,
     ClothesItemDetailComponent,
   ],
   imports: [
     BrowserModule,
+    KidsModule,
     AppRoutingModule,
-
     BrowserAnimationsModule,
     MatSidenavModule,
     MatToolbarModule,

@@ -1,0 +1,6 @@
+.product-card {
+  max-width: 400px;
+}
+img {
+  border-bottom: 1px solid lightgray;
+}
