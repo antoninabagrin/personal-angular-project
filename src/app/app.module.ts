@@ -21,6 +21,7 @@ import { ClothesService } from './clothes.service';
 import { ListOfClothesComponent } from './man/list-of-clothes/list-of-clothes.component';
 import { ClothesItemDetailComponent } from './man/clothes-item-detail/clothes-item-detail.component';
 import { KidsModule } from './kids/kids.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { KidsModule } from './kids/kids.module';
   ],
   imports: [
     BrowserModule,
+    FlexLayoutModule,
     KidsModule,
     AppRoutingModule,
     BrowserAnimationsModule,

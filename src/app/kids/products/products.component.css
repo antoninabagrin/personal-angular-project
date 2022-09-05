@@ -1,17 +1,22 @@
-.product-card {
-  max-width: 400px;
+.main {
+  margin-top: 8px;
 }
 
-mat-card {
-  margin: 0 1em 2em 1em;
-  border: 1px solid lightgray !important;
+.product-card {
+  padding: 0;
+  height: 500px;
+  width: 270px;
+  margin: 5px;
 }
 
 img {
-  border-bottom: 1px solid lightgray;
+  border: 1px solid lightgray;
   cursor: pointer;
+  width: 270px;
 }
 
-.grid-layout {
-  width: 70vw;
+.icon-button {
+  background-color: rgb(212, 207, 207);
+
+  z-index: 2;
 }

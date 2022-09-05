@@ -32,9 +32,9 @@ export const Produts: Product[] = [
   {
     id: 5,
     imageUrl:
-      'https://static.zara.net/photos///2022/I/0/3/p/5854/706/526/2/w/387/5854706526_6_1_1.jpg?ts=1657191801963',
+      'https://static.zara.net/photos///2022/I/0/3/p/1068/702/620/2/w/456/1068702620_6_1_1.jpg?ts=1660229179405',
     price: '159,90',
-    title: 'Geaca aviator matlasata cu aplicatie din tesatura de frotir',
+    title: 'Palton matlasat cu fermoare',
   },
   {
     id: 6,
@@ -43,15 +43,9 @@ export const Produts: Product[] = [
     price: '159,90',
     title: 'Geaca aviator classic',
   },
+
   {
     id: 7,
-    imageUrl:
-      'https://static.zara.net/photos///contents/cm/media-transformations/joinlife-kids-ctx/joinlife-kids-large.svg?ts=1611920113833',
-    price: '139,90',
-    title: 'Palton matlasat cu fermoare',
-  },
-  {
-    id: 5,
     imageUrl:
       'https://static.zara.net/photos///2022/I/0/3/p/1068/702/620/2/w/456/1068702620_6_1_1.jpg?ts=1660229179405',
     price: '159,90',
