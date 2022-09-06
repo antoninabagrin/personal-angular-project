@@ -1,6 +1,26 @@
-.product-card {
-  max-width: 400px;
+.origine {
+  /* height: 50px;
+  width: 50px; */
+  background-color: salmon;
 }
+
+.product-card {
+}
+
 img {
-  border-bottom: 1px solid lightgray;
+  height: 600px;
+}
+
+.description {
+  /* margin: 0; */
+}
+
+.footer-item {
+  font-size: 14px;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.divider {
+  border-top-color: black;
 }

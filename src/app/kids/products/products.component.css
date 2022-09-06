@@ -4,19 +4,30 @@
 
 .product-card {
   padding: 0;
-  height: 500px;
+  height: 470px;
   width: 270px;
-  margin: 5px;
+  margin: 3px;
 }
 
 img {
-  border: 1px solid lightgray;
   cursor: pointer;
   width: 270px;
 }
 
 .icon-button {
   background-color: rgb(212, 207, 207);
-
   z-index: 2;
+}
+
+.content {
+  padding-top: 5px;
+}
+
+.title {
+  font-weight: lighter;
+  font-size: smaller;
+}
+
+.price {
+  font-size: smaller;
 }

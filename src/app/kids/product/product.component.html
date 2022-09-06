@@ -1,20 +1,93 @@
-<div id="container">
-  <mat-card *ngIf="product$ | async as product" class="product-card">
+<!-- <mat-card *ngIf="product$ | async as product" class="product-card">
     <img mat-card-image [src]="product.imageUrl" alt="Photo of a product" />
     <mat-card-content>
       <mat-card-title>{{ product.title }}</mat-card-title>
       <mat-card-subtitle>{{ product.price }} LEI</mat-card-subtitle>
-      <!-- <p>descriere</p> -->
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary">
         <mat-icon>add_shopping_cart</mat-icon>
         Add to cart
       </button>
-      <!-- <button mat-raised-button color="primary" (click)="goBack()">
-              <mat-icon>storefront</mat-icon>
-              Continue shopping
-          </button> -->
     </mat-card-actions>
+  </mat-card> -->
+
+<div style="margin-top: 70px; margin-right: 100px; margin-left: 100px">
+  <mat-card *ngIf="product$ | async as product">
+    <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="center ">
+      <mat-card-content
+        class="origine"
+        fxFlex="20%"
+        fxFlex.sm="50%"
+        fxFlex.xs="100%"
+        >origine
+      </mat-card-content>
+      <div
+        fxFlex="40%"
+        fxFlex.sm="60%"
+        fxFlex.xs="100%"
+        fxLayoutAlign="center center"
+      >
+        <img [src]="product.imageUrl" alt="Photo of a product" />
+      </div>
+      <mat-card-content
+        class="description"
+        fxFlex="20%"
+        fxFlex.sm="100%"
+        fxFlex.xs="100%"
+        fxLayout="column"
+        fxLayoutAlign="center "
+      >
+        <div fxLayout="column" fxFlex="100%" fxLayoutGap="30px">
+          <div fxFlex="80%" fxLayout="column" fxLayoutGap="10px">
+            <mat-card-title fxFlex="10%">{{ product.title }}</mat-card-title>
+            <mat-card-subtitle fxFlex="20%">{{
+              product.description
+            }}</mat-card-subtitle>
+            <p fxFlex="5%">{{ product.color }}</p>
+            <p fxFlex="5%">{{ product.price }} LEI</p>
+            <mat-divider class="divider"></mat-divider>
+
+            <mat-selection-list
+              class="size-menu"
+              fxFlex="40%"
+              fxLayout="column"
+              fxLayoutAlign="center "
+              #shoes
+              [multiple]="false"
+            >
+              <mat-list-option> 7 ANI (122 CM)</mat-list-option>
+              <mat-list-option> 8 ANI (128 CM)</mat-list-option>
+              <mat-list-option> 9 ANI (134 CM)</mat-list-option>
+              <mat-list-option> 10 ANI (140 CM)</mat-list-option>
+            </mat-selection-list>
+
+            <p fxFlex="5%" style="font-size: x-small">
+              Acest produs are o marime mai mare decat cea obisnuita.
+            </p>
+            <mat-divider class="divider"></mat-divider>
+            <p fxFlex="5%">GHID DE MARIMI</p>
+
+            <button
+              fxFlex="10%"
+              mat-raised-button
+              style="background-color: black; color: white; padding: 2px"
+            >
+              ADAUGARE IN COS
+            </button>
+          </div>
+          <mat-card-footer fxFlex="20%">
+            <mat-list>
+              <mat-list-item class="footer-item">
+                VERIFICAŢI DISPONIBILITATEA ÎN MAGAZIN
+              </mat-list-item>
+              <mat-list-item class="footer-item">
+                LIVRARE, SCHIMBURI ŞI RETURNĂRI
+              </mat-list-item>
+            </mat-list>
+          </mat-card-footer>
+        </div>
+      </mat-card-content>
+    </div>
   </mat-card>
 </div>
