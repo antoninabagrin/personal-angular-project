@@ -11,7 +11,7 @@
   >
     <mat-card class="product-card" *ngFor="let product of products">
       <div fxFlex="100%" fxLayout="column">
-        <div fxFlex="70%">
+        <div fxFlex="80%">
           <img
             [src]="product.imageUrl"
             alt="Photo of a product"
@@ -19,8 +19,8 @@
             [routerLink]="['/product/', product.id]"
           />
         </div>
-        <div fxFlex="20%">
-          <mat-card-actions fxLayoutAlign="center ">
+        <div fxFlex="20%" fxLayout="column">
+          <mat-card-actions fxLayoutAlign="center " fxFlex="10%">
             <button
               class="icon-button"
               mat-mini-fab
@@ -39,9 +39,16 @@
               </mat-menu>
             </button>
           </mat-card-actions>
-          <mat-card-content class="content" fxLayout="column">
-            <mat-card-title class="title">{{ product.title }}</mat-card-title>
-            <mat-card-subtitle class="price"
+          <mat-card-content
+            class="content"
+            fxFlex="90%"
+            fxLayout="row"
+            fxFlexAlign=" space-between  "
+          >
+            <mat-card-title fxFlex="80%" class="title">{{
+              product.title | uppercase | shorten
+            }}</mat-card-title>
+            <mat-card-subtitle fxFlex="20%" class="price"
               >{{ product.price }} LEI</mat-card-subtitle
             >
           </mat-card-content>

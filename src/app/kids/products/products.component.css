@@ -4,7 +4,7 @@
 
 .product-card {
   padding: 0;
-  height: 470px;
+  height: 460px;
   width: 270px;
   margin: 3px;
 }
@@ -12,6 +12,7 @@
 img {
   cursor: pointer;
   width: 270px;
+  height: 420px;
 }
 
 .icon-button {
@@ -20,7 +21,7 @@ img {
 }
 
 .content {
-  padding-top: 5px;
+  padding-top: 25px;
 }
 
 .title {

@@ -22,6 +22,8 @@ import { ListOfClothesComponent } from './man/list-of-clothes/list-of-clothes.co
 import { ClothesItemDetailComponent } from './man/clothes-item-detail/clothes-item-detail.component';
 import { KidsModule } from './kids/kids.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ShortenPipe } from './shorten.pipe';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ProductsComponent,
     ListOfClothesComponent,
     ClothesItemDetailComponent,
+    ShortenPipe,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatMenuModule,
     MatButtonModule,
+    ScrollingModule,
   ],
   providers: [ClothesService],
   bootstrap: [AppComponent],

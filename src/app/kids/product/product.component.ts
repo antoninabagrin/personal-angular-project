@@ -12,6 +12,9 @@ import { Product } from 'src/app/model/product';
 })
 export class ProductComponent implements OnInit {
   product$!: Observable<Product>;
+
+  isReadMore = true;
+
   constructor(
     private clothesService: ClothesService,
 
@@ -26,7 +29,10 @@ export class ProductComponent implements OnInit {
     );
   }
 
-  // show() {
-  //   console.log('show');
-  // }
+  showText() {
+    this.isReadMore = !this.isReadMore;
+    if (this.isReadMore === false) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
 }
