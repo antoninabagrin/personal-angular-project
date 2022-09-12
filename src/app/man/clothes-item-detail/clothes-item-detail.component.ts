@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
-import { ClothesService } from 'src/app/clothes.service';
-import { Product } from 'src/app/model/product';
+import { ClothesService } from 'src/app/data/services/clothes.service';
+import { Product } from 'src/app/data/models/product';
 import { Observable } from 'rxjs';
 
 @Component({

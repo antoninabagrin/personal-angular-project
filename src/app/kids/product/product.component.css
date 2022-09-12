@@ -1,7 +1,11 @@
 .container {
-  margin-top: 70px;
-  margin-right: 100px;
-  margin-left: 100px;
+  margin-top: 50px;
+  margin-right: 60px;
+  margin-left: 60px;
+}
+
+.card-container {
+  height: 80vh;
 }
 
 .origine {
@@ -43,7 +47,7 @@
 }
 
 img {
-  height: 600px;
+  height: 700px;
 }
 
 .divider {

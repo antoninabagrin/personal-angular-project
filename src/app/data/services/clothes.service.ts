@@ -1,8 +1,8 @@
 import { Observable, Subject, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ClothesItem } from 'src/app/model/clothesItem';
-import { Produts } from './mock-products';
-import { Product } from './model/product';
+import { ClothesItem } from 'src/app/data/models/clothesItem';
+import { Produts } from '../../mock-products';
+import { Product } from '../models/product';
 
 export class ClothesService {
   private clothes: ClothesItem[] = [

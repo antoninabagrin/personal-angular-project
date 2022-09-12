@@ -1,9 +1,9 @@
 <div class="container">
-  <mat-card *ngIf="product$ | async as product">
+  <mat-card class="card-container" *ngIf="product$ | async as product">
     <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="center ">
       <mat-card-content
-        fxFlex="15%"
-        fxFlex.sm="50%"
+        fxFlex="25%"
+        fxFlex.sm="60%"
         fxFlex.xs="100%"
         fxLayout="column"
         fxLayoutAlign="end"
@@ -118,7 +118,7 @@
         </div>
       </mat-card-content>
       <div
-        fxFlex="45%"
+        fxFlex="50%"
         fxFlex.sm="60%"
         fxFlex.xs="100%"
         fxLayoutAlign="center center"

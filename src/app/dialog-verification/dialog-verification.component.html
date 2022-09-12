@@ -14,7 +14,6 @@
   <p class="content">Ce mărime cauţi?</p>
 
   <mat-button-toggle-group
-    aria-label="Buttons"
     name="sizes"
     multiple
     class="size-buttons"
@@ -23,50 +22,54 @@
   >
     <mat-button-toggle
       (click)="setSelectedButton1()"
-      class="size-button"
-      [ngClass]="{ 'button-selected': button1 === true }"
+      class="button-selected"
+      [ngClass]="{ 'size-button': button1 === true }"
       value="7"
       >7 ANI (122 CM)</mat-button-toggle
     >
     <mat-button-toggle
       (click)="setSelectedButton2()"
-      [ngClass]="{ 'button-selected': button2 === true }"
-      class="size-button"
+      [ngClass]="{ 'size-button': button2 === true }"
+      class="button-selected"
       value="8"
       >8 ANI (128 CM)</mat-button-toggle
     >
     <mat-button-toggle
       (click)="setSelectedButton3()"
-      [ngClass]="{ 'button-selected': button3 === true }"
-      class="size-button"
+      [ngClass]="{ 'size-button': button3 === true }"
+      class="button-selected"
       value="9"
       >9 ANI (134 CM)</mat-button-toggle
     >
     <mat-button-toggle
       (click)="setSelectedButton4()"
-      [ngClass]="{ 'button-selected': button4 === true }"
-      class="size-button"
+      [ngClass]="{ 'size-button': button4 === true }"
+      class="button-selected"
       value="10"
       >10 ANI (140 CM)</mat-button-toggle
     >
     <mat-button-toggle
       (click)="setSelectedButton5()"
-      [ngClass]="{ 'button-selected': button5 === true }"
-      class="size-button"
+      [ngClass]="{ 'size-button': button5 === true }"
+      class="button-selected"
       value="11/12"
       >11-12 ANI (152CM)</mat-button-toggle
     >
     <mat-button-toggle
       (click)="setSelectedButton6()"
-      [ngClass]="{ 'button-selected': button6 === true }"
-      class="size-button"
+      [ngClass]="{ 'size-button': button6 === true }"
+      class="button-selected"
       value="13/14"
       >13-14 ANI (164CM)</mat-button-toggle
     >
   </mat-button-toggle-group>
 
   <button
-    [disabled]="button1 || button2 || button3 || button4 || button5 || button6"
+    [disabled]="
+      button1 || button2 || button3 || button4 || button5 || button6
+        ? !disabled
+        : disabled
+    "
     class="add-button"
     mat-raised-button
   >

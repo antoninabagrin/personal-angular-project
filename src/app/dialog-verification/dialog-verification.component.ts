@@ -7,7 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DialogVerificationComponent implements OnInit {
   @Input() disabled: boolean = true;
-
   @Input() button1: boolean = false;
   @Input() button2: boolean = false;
   @Input() button3: boolean = false;
