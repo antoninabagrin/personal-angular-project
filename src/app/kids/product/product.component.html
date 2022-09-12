@@ -1,4 +1,4 @@
-<div style="margin-top: 70px; margin-right: 100px; margin-left: 100px">
+<div class="container">
   <mat-card *ngIf="product$ | async as product">
     <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="center ">
       <mat-card-content
@@ -8,18 +8,15 @@
         fxLayout="column"
         fxLayoutAlign="end"
       >
-        <!-- <cdk-virtual-scroll-viewport
-          class="list-container list-group"
-          autosize
-          itemSize="400"
-        > -->
         <div fxLayout="column" class="origine">
           <div [ngClass]="{ limitTextHeight: isReadMore }">
-            <mat-card-title style="font-size: medium"
+            <mat-card-title class="origine-title"
               >MATERIALE, ORIGINE ȘI ÎNGRIJIRE</mat-card-title
             >
-            <mat-card-title style="font-size: small">ORIGINE</mat-card-title>
-            <mat-card-subtitle style="color: black; font-weight: lighter">
+            <mat-card-title class="origine-second-title"
+              >ORIGINE</mat-card-title
+            >
+            <mat-card-subtitle class="origine-subtitle">
               <p>
                 Lucrăm împreună cu furnizorii, lucrătorii, sindicatele noastre
                 și organisme internaționale pentru a dezvolta un lanț de
@@ -36,8 +33,10 @@
 
               <p>Fabricat în China</p>
             </mat-card-subtitle>
-            <mat-card-title style="font-size: small">INGRIJIRE</mat-card-title>
-            <mat-card-subtitle style="color: black; font-weight: lighter">
+            <mat-card-title class="origine-second-title"
+              >INGRIJIRE</mat-card-title
+            >
+            <mat-card-subtitle class="origine-subtitle">
               <p>
                 Având grijă de articolele de îmbrăcăminte, aveți grijă și de
                 mediul înconjurător
@@ -93,8 +92,10 @@
               </mat-list>
             </mat-card-subtitle>
 
-            <mat-card-title style="font-size: small">MATERIALE</mat-card-title>
-            <mat-card-subtitle style="color: black; font-weight: lighter">
+            <mat-card-title class="origine-second-title"
+              >MATERIALE</mat-card-title
+            >
+            <mat-card-subtitle class="origine-subtitle">
               <p>
                 Lucrăm cu programe de urmărire în scopul de a garanta
                 respectarea standardelor noastre sociale, de mediu și de
@@ -115,7 +116,6 @@
             {{ isReadMore ? "Vedeţi mai multe" : "Vedeți mai puține" }}
           </button>
         </div>
-        <!-- </cdk-virtual-scroll-viewport> -->
       </mat-card-content>
       <div
         fxFlex="45%"
@@ -150,7 +150,6 @@
               fxFlex="40%"
               fxLayout="column"
               fxLayoutAlign="center "
-              #shoes
               [multiple]="false"
             >
               <mat-list-option> 7 ANI (122 CM)</mat-list-option>
@@ -159,26 +158,29 @@
               <mat-list-option> 10 ANI (140 CM)</mat-list-option>
             </mat-selection-list>
 
-            <p fxFlex="5%" style="font-size: x-small">
+            <p fxFlex="5%" class="description-info">
               Acest produs are o marime mai mare decat cea obisnuita.
             </p>
             <mat-divider class="divider"></mat-divider>
             <p fxFlex="5%">GHID DE MARIMI</p>
 
             <button
+              class="description-add-button"
               fxFlex="10%"
               mat-raised-button
-              style="background-color: black; color: white; padding: 2px"
             >
               ADAUGARE IN COS
             </button>
           </div>
           <mat-card-footer fxFlex="20%">
             <mat-list>
-              <mat-list-item class="footer-item">
+              <mat-list-item
+                class="footer-item"
+                (click)="openVerificationDialog()"
+              >
                 VERIFICAŢI DISPONIBILITATEA ÎN MAGAZIN
               </mat-list-item>
-              <mat-list-item class="footer-item">
+              <mat-list-item class="footer-item" (click)="openDeliveryDialog()">
                 LIVRARE, SCHIMBURI ŞI RETURNĂRI
               </mat-list-item>
             </mat-list>

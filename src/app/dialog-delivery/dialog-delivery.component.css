@@ -1,0 +1,15 @@
+.container {
+  padding-top: 10%;
+  margin-left: 35px;
+}
+
+.content {
+  font-weight: lighter;
+  font-size: x-small;
+}
+
+.list-content {
+  padding-left: 10px;
+  font-weight: lighter;
+  font-size: x-small;
+}

@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { ClothesService } from 'src/app/clothes.service';
 import { Product } from 'src/app/model/product';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogDeliveryComponent } from 'src/app/dialog-delivery/dialog-delivery.component';
+import { DialogVerificationComponent } from 'src/app/dialog-verification/dialog-verification.component';
 
 @Component({
   selector: 'app-product',
@@ -17,8 +20,8 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private clothesService: ClothesService,
-
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -34,5 +37,36 @@ export class ProductComponent implements OnInit {
     if (this.isReadMore === false) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  }
+
+  openVerificationDialog(): void {
+    const dialogRef = this.dialog.open(DialogVerificationComponent, {
+      width: '49%',
+      height: '100%',
+
+      position: {
+        top: '0',
+        right: '0',
+      },
+      enterAnimationDuration: '1s',
+    });
+
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   // console.log('The dialog was closed');
+
+    // });
+  }
+
+  openDeliveryDialog(): void {
+    const dialogRef = this.dialog.open(DialogDeliveryComponent, {
+      width: '40%',
+      height: '100%',
+
+      position: {
+        top: '0',
+        right: '0',
+      },
+      enterAnimationDuration: '1s',
+    });
   }
 }

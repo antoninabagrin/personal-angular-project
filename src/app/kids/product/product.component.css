@@ -1,28 +1,25 @@
+.container {
+  margin-top: 70px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
 .origine {
   height: 450px;
-  /* width: 200px; */
   overflow-y: scroll;
 }
 
-.product-card {
+.origine-title {
+  font-size: medium;
 }
 
-img {
-  height: 600px;
+.origine-second-title {
+  font-size: small;
 }
 
-.description {
-  /* margin: 0; */
-}
-
-.footer-item {
-  font-size: 14px;
+.origine-subtitle {
+  color: black;
   font-weight: lighter;
-  cursor: pointer;
-}
-
-.divider {
-  border-top-color: black;
 }
 
 .limitTextHeight {
@@ -35,8 +32,6 @@ img {
 }
 
 .img {
-  /* height: 32px;
-  width: 32px; */
   padding-bottom: 15px;
   margin-right: 20px;
 }
@@ -45,4 +40,28 @@ img {
   font-weight: lighter;
 
   text-decoration-line: underline;
+}
+
+img {
+  height: 600px;
+}
+
+.divider {
+  border-top-color: black;
+}
+
+.description-info {
+  font-size: x-small;
+}
+
+.description-add-button {
+  background-color: black;
+  color: white;
+  padding: 2px;
+}
+
+.footer-item {
+  font-size: 14px;
+  font-weight: lighter;
+  cursor: pointer;
 }

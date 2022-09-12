@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [ProductComponent],
@@ -23,6 +24,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     FlexLayoutModule,
     MatListModule,
     ScrollingModule,
+    MatDialogModule,
   ],
 })
 export class KidsModule {}

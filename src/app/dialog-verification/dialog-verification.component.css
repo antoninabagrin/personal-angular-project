@@ -1,0 +1,38 @@
+.container {
+  padding-top: 10%;
+  margin-left: 35px;
+}
+
+.content {
+  font-weight: lighter;
+}
+
+.size-buttons {
+  margin-top: 15px;
+  border: none;
+}
+
+.size-button {
+  width: 200px;
+  /* height: 32px; */
+  margin-bottom: 10px;
+  background-color: black;
+  color: white;
+}
+
+.button-selected {
+  border: 1px solid black;
+
+  width: 200px;
+  margin-bottom: 10px;
+  background-color: white;
+  color: black;
+}
+
+.add-button {
+  margin-top: 15px;
+  background-color: black;
+  color: white;
+  width: 38%;
+  height: 55px;
+}

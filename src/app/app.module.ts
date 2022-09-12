@@ -24,6 +24,11 @@ import { KidsModule } from './kids/kids.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ShortenPipe } from './shorten.pipe';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogDeliveryComponent } from './dialog-delivery/dialog-delivery.component';
+import { DialogVerificationComponent } from './dialog-verification/dialog-verification.component';
+
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -37,6 +42,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     ListOfClothesComponent,
     ClothesItemDetailComponent,
     ShortenPipe,
+    DialogDeliveryComponent,
+    DialogVerificationComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +60,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MatMenuModule,
     MatButtonModule,
     ScrollingModule,
+    MatDialogModule,
+    MatButtonToggleModule,
   ],
   providers: [ClothesService],
   bootstrap: [AppComponent],
