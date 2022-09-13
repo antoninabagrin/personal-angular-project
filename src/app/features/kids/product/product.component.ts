@@ -5,8 +5,8 @@ import { switchMap } from 'rxjs/operators';
 import { ClothesService } from 'src/app/data/services/clothes.service';
 import { Product } from 'src/app/data/models/product';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogDeliveryComponent } from 'src/app/dialog-delivery/dialog-delivery.component';
-import { DialogVerificationComponent } from 'src/app/dialog-verification/dialog-verification.component';
+import { DialogVerificationComponent } from '../dialog-verification/dialog-verification.component';
+import { DialogDeliveryComponent } from '../dialog-delivery/dialog-delivery.component';
 
 @Component({
   selector: 'app-product',
@@ -68,5 +68,9 @@ export class ProductComponent implements OnInit {
       },
       enterAnimationDuration: '1s',
     });
+  }
+
+  addItemToCart(event: any) {
+    console.log('addItemToCart');
   }
 }

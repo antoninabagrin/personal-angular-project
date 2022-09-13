@@ -4,6 +4,11 @@ import { ClothesItem } from 'src/app/data/models/clothesItem';
 import { Produts } from '../../mock-products';
 import { Product } from '../models/product';
 
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
 export class ClothesService {
   private clothes: ClothesItem[] = [
     {

@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+// import { Component, OnInit } from '@angular/core';
 
-@Component({
-  selector: 'app-man',
-  templateUrl: './man.component.html',
-  styleUrls: ['./man.component.css']
-})
-export class ManComponent implements OnInit {
+// @Component({
+//   selector: 'app-man',
+//   templateUrl: './man.component.html',
+//   styleUrls: ['./man.component.css']
+// })
+// export class ManComponent implements OnInit {
 
-  constructor() { }
+//   constructor() { }
 
-  ngOnInit(): void {
-  }
+//   ngOnInit(): void {
+//   }
 
-}
+// }
