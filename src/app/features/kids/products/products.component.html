@@ -15,7 +15,6 @@
           <img
             [src]="product.imageUrl"
             alt="Photo of a product"
-            (click)="show()"
             [routerLink]="['/product/', product.id]"
           />
         </div>
@@ -28,10 +27,18 @@
             >
               <mat-icon>add</mat-icon>
               <mat-menu yPosition="above" xPosition="after" #menu="matMenu">
-                <button mat-menu-item>7 ANI (122 CM)</button>
-                <button mat-menu-item>8 ANI (128 CM)</button>
-                <button mat-menu-item>9 ANI (134 CM)</button>
-                <button mat-menu-item>10 ANI (140 CM)</button>
+                <button mat-menu-item (click)="incrementCartQuantity()">
+                  7 ANI (122 CM)
+                </button>
+                <button mat-menu-item (click)="incrementCartQuantity()">
+                  8 ANI (128 CM)
+                </button>
+                <button mat-menu-item (click)="incrementCartQuantity()">
+                  9 ANI (134 CM)
+                </button>
+                <button mat-menu-item (click)="incrementCartQuantity()">
+                  10 ANI (140 CM)
+                </button>
                 <button mat-menu-item style="font-size: x-small">
                   Acest produs are o marime mai mare decat cea obisnuita.
                 </button>
@@ -56,4 +63,7 @@
       </div>
     </mat-card>
   </div>
+</div>
+<div (click)="scrollToTop()" class="scroll-to-top" *ngIf="pageYoffset > 0">
+  scrollToTop
 </div>

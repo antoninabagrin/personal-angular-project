@@ -7,6 +7,7 @@ import { Product } from 'src/app/data/models/product';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogVerificationComponent } from '../dialog-verification/dialog-verification.component';
 import { DialogDeliveryComponent } from '../dialog-delivery/dialog-delivery.component';
+import { CartService } from 'src/app/data/services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -21,7 +22,8 @@ export class ProductComponent implements OnInit {
   constructor(
     private clothesService: ClothesService,
     private route: ActivatedRoute,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -70,7 +72,8 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  addItemToCart(event: any) {
-    console.log('addItemToCart');
+  incrementCartQuantity() {
+    this.cartService.incrementCartQuantity();
+    console.log('addItemToCart from product');
   }
 }

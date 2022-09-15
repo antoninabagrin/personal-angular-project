@@ -22,6 +22,8 @@ import { HeaderComponent } from './header/header.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SharedModule } from './shared/shared.module';
 import { KidsModule } from './features/kids/kids.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { KidsModule } from './features/kids/kids.module';
     MatButtonModule,
     MatDialogModule,
     SharedModule,
+    FlexLayoutModule,
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

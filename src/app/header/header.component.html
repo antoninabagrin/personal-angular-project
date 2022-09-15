@@ -1,4 +1,4 @@
-<mat-sidenav-container>
+<mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav>
     <mat-nav-list (click)="sidenav.close()">
       <a mat-list-item routerLink="woman ">
@@ -21,13 +21,28 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-toolbar color="primary" class="headerclass">
-    <button mat-icon-button (click)="sidenav.open()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <a mat-button class="home">
-      <span>HOME</span>
-    </a>
+  <mat-toolbar
+    fxFlex
+    fxLayout="row "
+    color="primary"
+    fxLayoutAlign="space-between center"
+  >
+    <div>
+      <button mat-icon-button (click)="sidenav.open()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <a mat-button class="home">
+        <span>HOME</span>
+      </a>
+    </div>
+    <div>
+      <button mat-icon-button>
+        <mat-icon [matBadge]="cartQuantity" matBadgeColor="accent"
+          >shopping_cart</mat-icon
+        >
+      </button>
+    </div>
   </mat-toolbar>
+
+  <router-outlet></router-outlet>
 </mat-sidenav-container>
-<router-outlet></router-outlet>

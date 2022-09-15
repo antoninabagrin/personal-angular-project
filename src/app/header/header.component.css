@@ -1,8 +1,12 @@
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .home {
   font-size: x-large;
   margin-left: 10px;
-}
-
-.headerclass {
-  margin-bottom: 600px;
 }

@@ -1,8 +1,9 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { ClothesService } from '../../../data/services/clothes.service';
 import { ClothesItem } from '../../../data/models/clothesItem';
 import { Product } from '../../../data/models/product';
+import { CartService } from 'src/app/data/services/cart.service';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-products',
@@ -10,7 +11,10 @@ import { Product } from '../../../data/models/product';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit, OnDestroy {
-  // private isChangedSub: Subscription;
+  pageYoffset = 0;
+  @HostListener('window:scroll', ['$event']) onScroll() {
+    this.pageYoffset = window.pageYOffset;
+  }
   products: Product[] = [];
 
   favoriteItem: ClothesItem[] = [
@@ -21,7 +25,11 @@ export class ProductsComponent implements OnInit, OnDestroy {
       price: 45.99,
     },
   ];
-  constructor(private clothesService: ClothesService) {}
+  constructor(
+    private clothesService: ClothesService,
+    private cartService: CartService,
+    private scroll: ViewportScroller
+  ) {}
 
   ngOnInit() {
     this.getProducts();
@@ -44,8 +52,13 @@ export class ProductsComponent implements OnInit, OnDestroy {
       .subscribe((products) => (this.products = products));
   }
 
-  show() {
-    console.log('show');
+  incrementCartQuantity() {
+    this.cartService.incrementCartQuantity();
+    console.log('addItemToCart from products');
+  }
+
+  scrollToTop() {
+    this.scroll.scrollToPosition([0, 0]);
   }
 
   ngOnDestroy(): void {
