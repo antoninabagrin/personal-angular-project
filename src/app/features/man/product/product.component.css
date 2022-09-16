@@ -1,0 +1,71 @@
+.container {
+  margin-top: 50px;
+  margin-right: 60px;
+  margin-left: 60px;
+}
+
+.card-container {
+  height: 80vh;
+}
+
+.origine {
+  height: 450px;
+  overflow-y: scroll;
+}
+
+.origine-title {
+  font-size: medium;
+}
+
+.origine-second-title {
+  font-size: small;
+}
+
+.origine-subtitle {
+  color: black;
+  font-weight: lighter;
+}
+
+.limitTextHeight {
+  height: 500px;
+  overflow: hidden;
+}
+
+.care-list {
+  font-size: small;
+}
+
+.img {
+  padding-bottom: 15px;
+  margin-right: 20px;
+}
+
+.expand-button {
+  font-weight: lighter;
+
+  text-decoration-line: underline;
+}
+
+img {
+  height: 700px;
+}
+
+.divider {
+  border-top-color: black;
+}
+
+.description-info {
+  font-size: x-small;
+}
+
+.description-add-button {
+  background-color: black;
+  color: white;
+  padding: 2px;
+}
+
+.footer-item {
+  font-size: 14px;
+  font-weight: lighter;
+  cursor: pointer;
+}

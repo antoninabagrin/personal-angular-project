@@ -9,13 +9,13 @@
     fxLayoutGap="10px"
     fxLayoutAlign="center center"
   >
-    <mat-card class="product-card" *ngFor="let product of kidsProducts">
+    <mat-card class="product-card" *ngFor="let product of manProducts">
       <div fxFlex="100%" fxLayout="column">
         <div fxFlex="80%">
           <img
             [src]="product.imageUrl"
             alt="Photo of a product"
-            [routerLink]="['/kidsProduct/', product.id]"
+            [routerLink]="['/manProduct', product.id]"
           />
         </div>
         <div fxFlex="20%" fxLayout="column">
@@ -28,21 +28,28 @@
               <mat-icon>add</mat-icon>
               <mat-menu yPosition="above" xPosition="after" #menu="matMenu">
                 <button mat-menu-item (click)="incrementCartQuantity()">
-                  7 ANI (122 CM)
+                  S
                 </button>
                 <button mat-menu-item (click)="incrementCartQuantity()">
-                  8 ANI (128 CM)
+                  M
                 </button>
                 <button mat-menu-item (click)="incrementCartQuantity()">
-                  9 ANI (134 CM)
+                  L
                 </button>
                 <button mat-menu-item (click)="incrementCartQuantity()">
-                  10 ANI (140 CM)
+                  XL
                 </button>
-                <button mat-menu-item style="font-size: x-small">
-                  Acest produs are o marime mai mare decat cea obisnuita.
+
+                <button
+                  mat-menu-item
+                  fxLayout="row "
+                  fxLayoutGap="13px"
+                  fxLayoutAlign="space-between"
+                >
+                  <p>AFLATI-VA MARIMEA</p>
+
+                  <p>GHID DE MARIMI</p>
                 </button>
-                <button mat-menu-item>GHID DE MARIMI</button>
               </mat-menu>
             </button>
           </mat-card-actions>

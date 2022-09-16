@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-card class="card-container" *ngIf="kidsProducts$ | async as product">
+  <mat-card class="card-container" *ngIf="manProduct$ | async as product">
     <div fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="center ">
       <mat-card-content
         fxFlex="25%"
@@ -147,20 +147,17 @@
 
             <mat-selection-list
               class="size-menu"
-              fxFlex="40%"
+              fxFlex="45%"
               fxLayout="column"
               fxLayoutAlign="center "
               [multiple]="false"
             >
-              <mat-list-option> 7 ANI (122 CM)</mat-list-option>
-              <mat-list-option> 8 ANI (128 CM)</mat-list-option>
-              <mat-list-option> 9 ANI (134 CM)</mat-list-option>
-              <mat-list-option> 10 ANI (140 CM)</mat-list-option>
+              <mat-list-option> S</mat-list-option>
+              <mat-list-option> M</mat-list-option>
+              <mat-list-option> L</mat-list-option>
+              <mat-list-option> XL</mat-list-option>
             </mat-selection-list>
 
-            <p fxFlex="5%" class="description-info">
-              Acest produs are o marime mai mare decat cea obisnuita.
-            </p>
             <mat-divider class="divider"></mat-divider>
             <p fxFlex="5%">GHID DE MARIMI</p>
             <button
@@ -174,13 +171,10 @@
           </div>
           <mat-card-footer fxFlex="20%">
             <mat-list>
-              <mat-list-item
-                class="footer-item"
-                (click)="openVerificationDialog()"
-              >
+              <mat-list-item class="footer-item">
                 VERIFICAŢI DISPONIBILITATEA ÎN MAGAZIN
               </mat-list-item>
-              <mat-list-item class="footer-item" (click)="openDeliveryDialog()">
+              <mat-list-item class="footer-item">
                 LIVRARE, SCHIMBURI ŞI RETURNĂRI
               </mat-list-item>
             </mat-list>

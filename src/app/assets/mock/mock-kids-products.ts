@@ -1,6 +1,6 @@
-import { Product } from './data/models/product';
+import { Product } from '../../data/models/product';
 
-export const Produts: Product[] = [
+export const KidsProducts: Product[] = [
   {
     id: 1,
     imageUrl:

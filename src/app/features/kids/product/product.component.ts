@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ParamMap, ActivatedRoute } from '@angular/router';
+import { ParamMap, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { ClothesService } from 'src/app/data/services/clothes.service';
@@ -15,7 +15,7 @@ import { CartService } from 'src/app/data/services/cart.service';
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit {
-  product$!: Observable<Product>;
+  kidsProducts$!: Observable<Product>;
 
   isReadMore = true;
 
@@ -27,9 +27,9 @@ export class ProductComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.product$ = this.route.paramMap.pipe(
+    this.kidsProducts$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.clothesService.getProduct(params.get('id')!)
+        this.clothesService.getKidsProduct(params.get('id')!)
       )
     );
   }
@@ -74,6 +74,5 @@ export class ProductComponent implements OnInit {
 
   incrementCartQuantity() {
     this.cartService.incrementCartQuantity();
-    console.log('addItemToCart from product');
   }
 }

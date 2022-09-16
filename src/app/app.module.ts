@@ -11,31 +11,23 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
-
-import { WomanComponent } from './woman/woman.component';
-// import { ManComponent } from './man/man.component';
 import { HomeComponent } from './home/home.component';
-// import { ClothesListComponent } from './woman/clothes-list/clothes-list.component';;
-// import { ListOfClothesComponent } from './man/list-of-clothes/list-of-clothes.component';
-// import { ClothesItemDetailComponent } from './man/clothes-item-detail/clothes-item-detail.component';
 import { HeaderComponent } from './header/header.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SharedModule } from './shared/shared.module';
 import { KidsModule } from './features/kids/kids.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatBadgeModule } from '@angular/material/badge';
+import { WomanModule } from './features/woman/woman.module';
+import { ManModule } from './features/man/man.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    WomanComponent,
-    HomeComponent,
-    // ClothesListComponent,
-  ],
+  declarations: [AppComponent, HeaderComponent, HomeComponent],
   imports: [
     BrowserModule,
     KidsModule,
+    WomanModule,
+    ManModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
