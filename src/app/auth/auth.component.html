@@ -1,0 +1,59 @@
+<div class="container">
+  <form
+    #authForm="ngForm"
+    (ngSubmit)="onSubmit(authForm)"
+    fxLayout="column"
+    fxLayoutAlign="space-around center"
+  >
+    <div class="form-group">
+      <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter your name</mat-label>
+        <input ngModel name="name" required matInput />
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input
+          ngModel
+          name="email"
+          required
+          email
+          matInput
+          placeholder="pat@example.com"
+        />
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input
+          ngModel
+          name="password"
+          required
+          minlength="6"
+          matInput
+          [type]="hide ? 'password' : 'text'"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!authForm.valid"
+    >
+      Register
+    </button>
+  </form>
+</div>

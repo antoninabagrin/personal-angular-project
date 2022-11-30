@@ -20,9 +20,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatBadgeModule } from '@angular/material/badge';
 import { WomanModule } from './features/woman/woman.module';
 import { ManModule } from './features/man/man.module';
-
+import { AuthComponent } from './auth/auth.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, AuthComponent, LoginComponent],
   imports: [
     BrowserModule,
     KidsModule,
@@ -42,6 +46,9 @@ import { ManModule } from './features/man/man.module';
     SharedModule,
     FlexLayoutModule,
     MatBadgeModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
