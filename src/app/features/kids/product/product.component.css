@@ -1,4 +1,5 @@
 .container {
+  position: relative;
   margin-top: 50px;
   margin-right: 60px;
   margin-left: 60px;
@@ -68,4 +69,11 @@ img {
   font-size: 14px;
   font-weight: lighter;
   cursor: pointer;
+}
+
+.chat {
+  position: absolute;
+  position: fixed;
+  bottom: 20px;
+  right: 0;
 }

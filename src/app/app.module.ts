@@ -26,7 +26,13 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, AuthComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    AuthComponent,
+    LoginComponent,
+  ],
   imports: [
     BrowserModule,
     KidsModule,
@@ -48,6 +54,7 @@ import { LoginComponent } from './login/login.component';
     MatBadgeModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
     FormsModule,
   ],
   providers: [],
