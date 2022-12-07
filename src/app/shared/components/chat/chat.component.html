@@ -1,17 +1,25 @@
-<ng-container>
-  <button mat-raised-button><mat-icon>chat_bubble</mat-icon> CHAT</button>
+<ng-container *ngIf="chatButton">
+  <button (click)="openChat()" mat-raised-button>
+    <mat-icon>chat_bubble</mat-icon> CHAT
+  </button>
 </ng-container>
 <ng-container *ngIf="show">
   <mat-card class="chat-card">
     <div class="chat-header">
-      <mat-icon id="icon-left" class="chat-icon"> close</mat-icon>
+      <mat-icon (click)="closeChat()" id="icon-left" class="chat-icon">
+        close</mat-icon
+      >
+
       <h2 class="chat-title">CHAT</h2>
       <mat-icon id="icon-right" class="chat-icon"> chevron_right</mat-icon>
     </div>
     <mat-card-content class="chat-content">
       <mat-card-subtitle class="chat-subtitle">Astazi</mat-card-subtitle>
-      <div class="text" *ngFor="let msg of messages">
-        <p>{{ msg.message }}</p>
+      <div class="text-container">
+        <div class="text-item" *ngFor="let msg of messages">
+          <li class="text">{{ msg.message }}</li>
+          <li>{{ msg.date }}</li>
+        </div>
       </div>
       <p>
         {{ longText }}
@@ -20,10 +28,9 @@
     <div class="chat-footer">
       <mat-icon id="icon-left" class="chat-icon">add</mat-icon>
       <form (submit)="submit()">
-        <mat-form-field>
+        <mat-form-field class="user-input">
           <input
             matInput
-            class="form-control"
             placeholder="Mesaj"
             [value]="message"
             (change)="message = $event.target.value"

@@ -19,6 +19,16 @@
   justify-self: center;
 }
 
+.chat-content {
+  display: flex;
+  height: 70%;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: space-between;
+  font-weight: lighter;
+  font-size: x-small;
+}
+
 .chat-subtitle {
   border: solid;
   padding: 2px;
@@ -26,31 +36,43 @@
   width: 40px;
   height: 20px;
   border-radius: 10px;
+  align-self: center;
+}
+
+.text-container {
+  align-self: flex-end;
+}
+
+.text-item {
+  background-color: #e5e5e5;
+  border-radius: 8px;
+  margin-right: 10px;
+  animation: floatup 0.5s forwards;
+  padding: 5px;
+  list-style: none;
 }
 
 .text {
-  align-self: flex-end;
-  font-weight: bold;
-  border: solid;
-  border-color: rgb(165, 162, 162);
-  padding: 5px;
-  border-width: 1px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font: inherit;
+  font-weight: lighter;
+  font-size: 11px;
+}
+
+.text-item {
+  margin: 5px;
 }
 
 .chat-footer {
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 75% 1fr;
   align-items: center;
 }
 
-.chat-content {
-  display: flex;
-  height: 70%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: lighter;
-  font-size: x-small;
+.user-input {
+  width: 100%;
 }
 
 .chat-icon {
@@ -58,6 +80,7 @@
 }
 
 #icon-left {
+  cursor: pointer;
   justify-self: flex-start;
 }
 

@@ -8,6 +8,8 @@ import Pusher from 'pusher-js';
   styleUrls: ['./chat.component.css'],
 })
 export class ChatComponent implements OnInit {
+  date;
+  chatButton = true;
   show = false;
   longText =
     'În momentul în care accesaţi chatul de pe Zara.com, confirmaţi că aţi citit şi că înţelegeţi Politica noastră de confidenţialitate şi privind Cookie-urile.';
@@ -29,11 +31,35 @@ export class ChatComponent implements OnInit {
   }
 
   submit(): void {
-    this.http
-      .post('http://localhost:8000/api/messages', {
-        // username: this.username,
-        message: this.message,
-      })
-      .subscribe(() => (this.message = ''));
+    if (!this.message) {
+      return;
+    } else {
+      this.date =
+        this.padTo2Digits(new Date().getHours()) +
+        ':' +
+        this.padTo2Digits(new Date().getMinutes());
+      console.log(this.date, 'dataa');
+
+      this.http
+        .post('http://localhost:8000/api/messages', {
+          date: this.date,
+          message: this.message,
+        })
+        .subscribe(() => (this.message = ''));
+    }
+  }
+
+  padTo2Digits(num) {
+    return String(num).padStart(2, '0');
+  }
+
+  openChat() {
+    this.show = true;
+    this.chatButton = false;
+  }
+
+  closeChat() {
+    this.show = !this.show;
+    this.chatButton = !this.chatButton;
   }
 }
