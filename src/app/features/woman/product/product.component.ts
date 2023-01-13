@@ -4,8 +4,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Product } from 'src/app/data/models/product';
-import { CartService } from 'src/app/data/services/cart.service';
-import { ClothesService } from 'src/app/data/services/clothes.service';
+import { CartService } from 'src/app/data/services/cart/cart.service';
+import { ClothesService } from 'src/app/data/services/clothes/clothes.service';
 
 @Component({
   selector: 'app-product',

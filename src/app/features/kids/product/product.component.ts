@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ParamMap, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { ClothesService } from 'src/app/data/services/clothes.service';
+import { ClothesService } from 'src/app/data/services/clothes/clothes.service';
 import { Product } from 'src/app/data/models/product';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogVerificationComponent } from '../dialog-verification/dialog-verification.component';
 import { DialogDeliveryComponent } from '../dialog-delivery/dialog-delivery.component';
-import { CartService } from 'src/app/data/services/cart.service';
+import { CartService } from 'src/app/data/services/cart/cart.service';
 
 @Component({
   selector: 'app-product',

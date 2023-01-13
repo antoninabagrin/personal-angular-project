@@ -5,15 +5,33 @@
 </ng-container>
 <ng-container *ngIf="show">
   <mat-card class="chat-card">
-    <div class="chat-header">
-      <mat-icon (click)="closeChat()" id="icon-left" class="chat-icon">
+    <div class="chat-header" *ngIf="!hide">
+      <mat-icon
+        (click)="expandChatCloseOverlay()"
+        id="icon-left"
+        class="chat-icon"
+      >
         close</mat-icon
       >
 
       <h2 class="chat-title">CHAT</h2>
-      <mat-icon id="icon-right" class="chat-icon"> chevron_right</mat-icon>
+      <mat-icon (click)="closeChat()" id="icon-right" class="chat-icon">
+        chevron_right</mat-icon
+      >
     </div>
-    <mat-card-content class="chat-content">
+    <ng-container *ngIf="showChatCloseOverlay" [ngClass]="chatCloseOverlay">
+      <mat-card class="chatClose">
+        <h2>DORIȚI SĂ ÎNCHIDEȚI CHATUL?</h2>
+        <p class="chat-alert-dialog__message">
+          Dacă îl închideți, veți pierde această conversație
+        </p>
+        <div class="action-buttons">
+          <button class="button-close" mat-raised-button>Inchidere</button>
+          <button class="button-cancel" mat-button>Anulare</button>
+        </div>
+      </mat-card>
+    </ng-container>
+    <mat-card-content class="chat-content" *ngIf="!hide">
       <mat-card-subtitle class="chat-subtitle">Astazi</mat-card-subtitle>
       <div class="text-container">
         <div class="text-item" *ngFor="let msg of messages">
@@ -21,13 +39,20 @@
           <li>{{ msg.date }}</li>
         </div>
       </div>
-      <p>
-        {{ longText }}
+      <p class="chat-policy">
+        În momentul în care accesaţi chatul de pe Zara.com, confirmaţi că aţi
+        citit şi că înţelegeţi
+        <a
+          href="https://static.zara.net/static/pdfs/RO/privacy-policy/privacy-policy-ro_RO-20210706.pdf"
+          class="policy-link"
+          target="_blank"
+          >Politica noastră de confidenţialitate şi privind Cookie-urile.</a
+        >
       </p>
     </mat-card-content>
     <div class="chat-footer">
       <mat-icon id="icon-left" class="chat-icon">add</mat-icon>
-      <form (submit)="submit()">
+      <form (submit)="submit($event)">
         <mat-form-field class="user-input">
           <input
             matInput

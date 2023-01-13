@@ -1,8 +1,8 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { ClothesService } from '../../../data/services/clothes.service';
+import { ClothesService } from '../../../data/services/clothes/clothes.service';
 import { ClothesItem } from '../../../data/models/clothesItem';
 import { Product } from '../../../data/models/product';
-import { CartService } from 'src/app/data/services/cart.service';
+import { CartService } from 'src/app/data/services/cart/cart.service';
 import { ViewportScroller } from '@angular/common';
 
 @Component({

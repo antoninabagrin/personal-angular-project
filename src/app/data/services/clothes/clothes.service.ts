@@ -1,9 +1,9 @@
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { KidsProducts } from '../../assets/mock/mock-kids-products';
-import { ManProducts } from '../../assets/mock/mock-man-products';
-import { WomanProducts } from '../../assets/mock/mock-woman-products';
-import { Product } from '../models/product';
+import { KidsProducts } from '../../../assets/mock/mock-kids-products';
+import { ManProducts } from '../../../assets/mock/mock-man-products';
+import { WomanProducts } from '../../../assets/mock/mock-woman-products';
+import { Product } from '../../models/product';
 import { Injectable } from '@angular/core';
 
 @Injectable({

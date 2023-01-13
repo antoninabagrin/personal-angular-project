@@ -1,9 +1,12 @@
 .chat-card {
   display: flex;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   flex-direction: column;
   justify-content: space-around;
-  overflow: hidden;
-  z-index: 10;
+  /* overflow: hidden; */
+  z-index: 2;
   width: 350px;
   height: 550px;
   padding: 10px;
@@ -13,6 +16,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+/* .chat-header-after {
+  display: none;
+} */
 
 .chat-title {
   font-weight: normal;
@@ -64,6 +71,18 @@
   margin: 5px;
 }
 
+.chat-policy {
+  color: #999999;
+  padding: 20px;
+  text-align: center;
+}
+
+.policy-link {
+  color: #999999;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .chat-footer {
   width: 100%;
   display: grid;
@@ -85,5 +104,52 @@
 }
 
 #icon-right {
+  cursor: pointer;
   justify-self: flex-end;
+}
+
+.chat-close-overlay {
+  border: 1px solid;
+  border-color: #999999;
+  /* height: 50%; */
+  position: absolute;
+  align-self: center;
+
+  top: 0;
+  width: 70%;
+  z-index: 5;
+}
+
+.chatClose {
+  height: 100%;
+  background-color: rgba(186, 13, 13, 0.2);
+}
+
+/* --color-background-overlay: rgb(0 0 0 / 20%);
+    --color-background-overlay-alt: rgb(255 255 255 / 75%); */
+
+.action-buttons {
+  height: 100px;
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+}
+
+.button-close {
+  justify-self: center;
+  width: 80%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  padding: 8px;
+  align-self: center;
+}
+
+.button-cancel {
+  justify-self: center;
+  width: 80%;
+  height: 50px;
+  border: 1px solid;
+  padding: 8px;
+  border-color: black;
 }
