@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import Pusher from 'pusher-js';
 import { ChatService } from 'src/app/data/services/chat/chat.service';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Messages } from 'src/app/data/models/messages';
 
 @Component({
   selector: 'app-chat',
@@ -12,8 +14,9 @@ export class ChatComponent implements OnInit {
   date;
   chatButton = true;
   show = false;
-  message = '';
-  messages: string[] = [];
+  message;
+  formdata;
+  messages: Messages[] = [];
   // chatHeader = 'chat-header-default';
   chatCloseOverlay = 'chat-close-overlay';
   showChatCloseOverlay = false;
@@ -21,8 +24,11 @@ export class ChatComponent implements OnInit {
   constructor(private http: HttpClient, private socketService: ChatService) {}
 
   ngOnInit(): void {
+    this.formdata = new FormGroup({
+      message: new FormControl(''),
+    });
     // Pusher.logToConsole = true;
-    // const pusher = new Pusher('f85a22084951a14c4a39', {
+    // const pusher = new Pusher('', {
     //   cluster: 'eu',
     // });
     // const channel = pusher.subscribe('chat');
@@ -31,8 +37,26 @@ export class ChatComponent implements OnInit {
     // });
   }
 
-  submit($event): void {
-    this.socketService.sendMessage();
+  submit(data): void {
+    // SOCCKET-CLIENT.IO
+    if (!this.message) {
+      return;
+    } else {
+      this.date =
+        this.padTo2Digits(new Date().getHours()) +
+        ':' +
+        this.padTo2Digits(new Date().getMinutes());
+      this.messages.push({
+        date: this.date,
+        message: data.message,
+      });
+      this.socketService.sendMessage(data.message);
+      this.socketService.messages.push({
+        date: this.date,
+        message: data.message,
+      });
+      this.formdata.reset();
+    }
     //PUSHER
     // if (!this.message) {
     //   return;
@@ -71,6 +95,15 @@ export class ChatComponent implements OnInit {
   closeChat() {
     this.show = !this.show;
     this.chatButton = !this.chatButton;
+  }
+
+  cancel() {
+    this.showChatCloseOverlay = false;
+    this.hide = false;
+  }
+
+  close() {
+    this.show = !this.show;
   }
 
   ngOnDestroy() {

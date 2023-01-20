@@ -69,3 +69,10 @@ img {
   font-weight: lighter;
   cursor: pointer;
 }
+
+.chat {
+  position: absolute;
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+}

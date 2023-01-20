@@ -6,7 +6,7 @@ import { ChatComponent } from './components/chat/chat.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [CartQuantityComponent, ShortenPipe, ChatComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MatCardModule,
     MatInputModule,
     MatIconModule,

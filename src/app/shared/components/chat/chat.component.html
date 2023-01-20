@@ -26,8 +26,12 @@
           Dacă îl închideți, veți pierde această conversație
         </p>
         <div class="action-buttons">
-          <button class="button-close" mat-raised-button>Inchidere</button>
-          <button class="button-cancel" mat-button>Anulare</button>
+          <button class="button-cancel" mat-button (click)="cancel()">
+            Anulare
+          </button>
+          <button class="button-close" mat-button (click)="close()">
+            Inchidere
+          </button>
         </div>
       </mat-card>
     </ng-container>
@@ -52,12 +56,14 @@
     </mat-card-content>
     <div class="chat-footer">
       <mat-icon id="icon-left" class="chat-icon">add</mat-icon>
-      <form (submit)="submit($event)">
+      <form [formGroup]="formdata" (ngSubmit)="submit(formdata.value)">
         <mat-form-field class="user-input">
           <input
+            type="text"
             matInput
+            name="message"
             placeholder="Mesaj"
-            [value]="message"
+            formControlName="message"
             (change)="message = $event.target.value"
           />
         </mat-form-field>
